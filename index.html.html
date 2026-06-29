@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bí Cảnh Khảo Nghiệm 🎁</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lora:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Bầu trời tiên giới: Xanh ngọc thanh khiết */
+            background: linear-gradient(to bottom, #a1c4fd 0%, #c2e9fb 100%);
+            color: #1e293b;
+            font-family: 'Lora', serif; /* Font chữ chính dễ đọc, dáng sách cổ */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Lớp sương mù/linh khí trôi lơ lửng */
+        .mist-container {
+            position: absolute;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .mist {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 65%);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        .mist-1 { width: 150vw; height: 100vh; top: -30vh; left: -20vw; animation: drift 15s infinite alternate ease-in-out; }
+        .mist-2 { width: 120vw; height: 80vh; bottom: -20vh; right: -20vw; animation: drift 20s infinite alternate-reverse ease-in-out; }
+        .mist-3 { width: 100vw; height: 60vh; top: 30vh; left: 10vw; animation: drift 18s infinite alternate ease-in-out; }
+
+        @keyframes drift {
+            0% { transform: translateX(0) translateY(0) scale(1); }
+            100% { transform: translateX(5%) translateY(3%) scale(1.1); }
+        }
+
+        /* Khung hiển thị chính */
+        .card {
+            background: rgba(255, 255, 255, 0.45); 
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(212, 175, 55, 0.3); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid #d4af37; 
+            text-align: center;
+            max-width: 550px;
+            width: 90%;
+            position: relative;
+            z-index: 10; 
+            transition: all 0.5s ease;
+        }
+
+        h1 { 
+            font-family: 'Cormorant Garamond', serif; /* Font tiêu đề nét thanh nét đậm */
+            font-size: 2.2rem; 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #b45309, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        p { 
+            font-size: 1.15rem; 
+            line-height: 1.7; 
+            color: #334155; 
+            font-weight: 500; 
+        }
+
+        #question-text {
+            font-family: 'Lora', serif; /* Riêng câu hỏi dùng Lora để to rõ, dễ đọc */
+            font-size: 1.6rem;
+            text-transform: none;
+            letter-spacing: 0;
+            line-height: 1.4;
+        }
+
+        .btn-container {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 14px 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            border: 1px solid #ffdf00;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Lora', serif; /* Font chữ trên nút bấm */
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        button:hover { 
+            background: linear-gradient(135deg, #ffdf00, #d4af37); 
+            color: #451a03;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        button:active { transform: scale(0.95); }
+
+        .start-btn { 
+            background: rgba(255, 255, 255, 0.8); 
+            color: #b45309; 
+            border: 2px solid #d4af37; 
+            font-family: 'Cormorant Garamond', serif; /* Nút bắt đầu dùng font cổ cho hoành tráng */
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+        .start-btn:hover {
+            background: #fffbeb;
+            color: #d4af37;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #0369a1; 
+            font-style: italic;
+            animation: breath 2s infinite;
+        }
+
+        @keyframes breath {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .hidden { display: none; }
+
+        .confetti {
+            position: absolute;
+            width: 6px; height: 6px; top: -10px;
+            z-index: 100; animation: fall linear forwards;
+            border-radius: 50%;
+            box-shadow: 0 0 10px currentColor;
+        }
+        @keyframes fall { to { transform: translateY(105vh) rotate(720deg); } }
+
+        .glow-text {
+            font-family: 'Cormorant Garamond', serif;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            animation: pulse 3s infinite;
+            font-size: 2.5rem;
+        }
+        @keyframes pulse { 50% { text-shadow: 0 0 25px rgba(212, 175, 55, 0.9); } }
+        
+        /* Chỉnh lại font cho bài thơ cho ra chất cổ phong */
+        .poem {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #b45309;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mist-container">
+        <div class="mist mist-1"></div>
+        <div class="mist mist-2"></div>
+        <div class="mist mist-3"></div>
+    </div>
+
+    <div class="card" id="gameCard">
+        <div id="welcome-screen">
+            <h1>BÍ CẢNH KHẢO NGHIỆM</h1>
+            <p>Vượt qua huyễn trận này để đoạt lấy cơ duyên nhé Minh Ngọc!</p>
+            <div class="btn-container">
+                <button class="start-btn" onclick="startQuiz()">THƯ VIỆN TRẬN PHÁP ✨</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <h1 id="question-text">Câu hỏi ở đây</h1>
+            <div class="btn-container" id="options-container">
+                </div>
+            <p class="note" id="encouragement">CỐ LÊN, SẮP ĐẾN ĐÍCH RỒI!</p>
+        </div>
+
+        <div id="transition-screen" class="hidden">
+            <h1 class="glow-text">KHẢO NGHIỆM THÀNH CÔNG</h1>
+            <p>CHÚC MỪNG ĐẠO HỮU ĐÃ VƯỢT QUA KHẢO NGHIỆM!</p>
+            <div class="btn-container" style="margin-top: 40px;">
+                <button class="start-btn" onclick="showResult()">ẤN VÀO ĐÂY ĐỂ ĐÓN NHẬN CƠ DUYÊN 🎁</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h1 class="glow-text">Sinh Thần Khoái Lạc! 🎉</h1>
+            
+            <p class="poem">
+                Sinh thần vừa tới mây giăng lối,<br>
+                Nhật nguyệt xoay vần mở vận thiên.<br>
+                Đạo hữu hôm nay thêm tuổi mới,<br>
+                Tu vi tinh tiến, đắc cơ duyên.
+            </p>
+        
+            <p style="text-align: justify;">
+                Nhân ngày sinh thần, chúc đạo hữu tuổi mới tu vi đại tiến, 
+                vận khí hanh thông, mọi tâm ma đều tiêu tán. 
+                Mong con đường phía trước của đạo hữu luôn có quý nhân tương trợ, 
+                khó khăn hóa thành cơ duyên, khổ đau hóa thành sức mạnh.
+            </p>
+        
+            <p style="margin-top: 15px;">
+                Được quen biết đạo hữu là một đoạn thiện duyên đáng quý. 
+                Chúc đạo hữu sinh thần khoái lạc, sớm ngày phi thăng!
+            </p>
+        
+            <p style="margin-top:25px; text-align: right; color: #b45309; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">
+                <i>(Ngô Hiệp Chân Nhân)</i>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "Hiệp trong mắt Ngọc là người như thế nào? 🤔",
+                options: ["Siêu cấp VIP PRO", "Yêu thương bạn bè", "Đáng tin cậy", "Tất cả đều đúng"],
+                encouragement: "Tâm niệm vững vàng, chọn đi đạo hữu!"
+            },
+            {
+                question: "Mỗi lần gặp Hiệp, suy nghĩ đầu tiên của Ngọc là gì?",
+                options: ["Cho Hiệp tiền", "Bao Hiệp ăn", "Tùy tâm trạng mà 1 trong 2", "Làm 3 cái một lượt"],
+                encouragement: "Đừng để tâm ma che mờ lý trí..."
+            },
+            {
+                question: "Món ăn nào mà hiện tại Ngọc muốn bao Hiệp nhất?",
+                options: ["Gà KFC", "Trà sữa", "Dookki", "Gì cũng muốn bao"],
+                encouragement: "Sắp đột phá cảnh giới rồi!"
+            },
+            {
+                question: "Lời hứa quan trọng nhất tuổi mới là gì?",
+                options: ["Kiếm nhiều tiền", "Học chăm", "Bao Hiệp ăn KFC", "Học chăm, kiếm nhiều tiền để bao Hiệp ăn KFC mỗi ngày"],
+                encouragement: "Ải cuối cùng, cẩn thận sấm sét kiếp nạn!"
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function startQuiz() {
+            document.getElementById('welcome-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const data = quizData[currentQuestion];
+            document.getElementById('question-text').innerText = data.question;
+            document.getElementById('encouragement').innerText = data.encouragement;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = ''; 
+
+            data.options.forEach(option => {
+                const btn = document.createElement('button');
+                btn.innerText = option;
+                btn.onclick = nextQuestion;
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                showQuestion();
+            } else {
+                showTransition(); 
+            }
+        }
+
+        function showTransition() {
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('transition-screen').classList.remove('hidden');
+        }
+
+        function showResult() {
+            document.getElementById('transition-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            document.getElementById('gameCard').style.boxShadow = "0 0 50px rgba(255, 255, 255, 0.8)";
+            createConfetti();
+        }
+
+        function createConfetti() {
+            const colors = ['#d4af37', '#fbbf24', '#38bdf8', '#818cf8'];
+            for (let i = 0; i < 100; i++) {
+                let conf = document.createElement('div');
+                conf.className = 'confetti';
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.color = colors[Math.floor(Math.random() * colors.length)];
+                conf.style.backgroundColor = conf.style.color;
+                conf.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                conf.style.animationDelay = (Math.random() * 2) + 's';
+                document.body.appendChild(conf);
+            }
+        }
+    </script>
+</body>
+</html>
