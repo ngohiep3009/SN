@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bí Cảnh Khảo Nghiệm 🎁</title>
+    <title>Sinh Nhật Của Mai 🎂✨</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Lora:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            /* Bầu trời tiên giới: Xanh ngọc thanh khiết */
-            background: linear-gradient(to bottom, #a1c4fd 0%, #c2e9fb 100%);
-            color: #1e293b;
-            font-family: 'Lora', serif; /* Font chữ chính dễ đọc, dáng sách cổ */
+            /* Hiệu ứng nền chuyển màu liên tục siêu ảo diệu */
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            color: #2d3436;
+            font-family: 'Baloo 2', cursive;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,73 +30,99 @@
             position: relative;
         }
 
-        /* Lớp sương mù/linh khí trôi lơ lửng */
-        .mist-container {
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Vùng chứa các icon bay lơ lửng */
+        #floating-container {
             position: absolute;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            overflow: hidden;
-            z-index: 1;
             pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
         }
-        
-        .mist {
+
+        .floating-icon {
             position: absolute;
-            background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 65%);
-            border-radius: 50%;
-            filter: blur(30px);
+            font-size: 2rem;
+            animation: floatUp linear infinite;
+            opacity: 0.7;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        .mist-1 { width: 150vw; height: 100vh; top: -30vh; left: -20vw; animation: drift 15s infinite alternate ease-in-out; }
-        .mist-2 { width: 120vw; height: 80vh; bottom: -20vh; right: -20vw; animation: drift 20s infinite alternate-reverse ease-in-out; }
-        .mist-3 { width: 100vw; height: 60vh; top: 30vh; left: 10vw; animation: drift 18s infinite alternate ease-in-out; }
-
-        @keyframes drift {
-            0% { transform: translateX(0) translateY(0) scale(1); }
-            100% { transform: translateX(5%) translateY(3%) scale(1.1); }
+        @keyframes floatUp {
+            0% { transform: translateY(110vh) rotate(0deg) scale(0.8); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) rotate(360deg) scale(1.2); opacity: 0; }
         }
 
         /* Khung hiển thị chính */
         .card {
-            background: rgba(255, 255, 255, 0.45); 
+            background: rgba(255, 255, 255, 0.85); 
             padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(212, 175, 55, 0.3); 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 2px solid #d4af37; 
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 0 5px rgba(255,255,255,0.4); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             text-align: center;
             max-width: 550px;
             width: 90%;
             position: relative;
             z-index: 10; 
-            transition: all 0.5s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: cardBreathe 3s infinite alternate;
+        }
+
+        @keyframes cardBreathe {
+            0% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 15px rgba(255, 154, 158, 0.5); }
+            100% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 40px rgba(161, 196, 253, 0.8); }
         }
 
         h1 { 
-            font-family: 'Cormorant Garamond', serif; /* Font tiêu đề nét thanh nét đậm */
             font-size: 2.2rem; 
-            margin-bottom: 20px; 
-            font-weight: 700; 
-            letter-spacing: 2px; 
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #b45309, #d4af37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px; 
+            font-weight: 800; 
+            letter-spacing: 1px;
+            /* Chữ đổ bóng nhiều lớp */
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
         }
         
+        .rainbow-text {
+            /* Đã bỏ các dấu # bị sai hoặc đổi sang mã màu Hex chuẩn cho đẹp hơn */
+            background-image: linear-gradient(to left, #ff9a9e, #fecfef, #a29bfe, #6c5ce7, #00b894, #00cec9, #fd79a8);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: rainbowAnim 4s linear infinite;
+            background-size: 200% auto;
+        
+        }
+
+        @keyframes rainbowAnim {
+            to { background-position: 200% center; }
+        }
+
         p { 
-            font-size: 1.15rem; 
-            line-height: 1.7; 
-            color: #334155; 
-            font-weight: 500; 
+            font-size: 1.2rem; 
+            line-height: 1.5; 
+            color: #4a4a4a; 
+            font-weight: 600; 
         }
 
         #question-text {
-            font-family: 'Lora', serif; /* Riêng câu hỏi dùng Lora để to rõ, dễ đọc */
             font-size: 1.6rem;
-            text-transform: none;
-            letter-spacing: 0;
-            line-height: 1.4;
+            font-weight: 800;
+            color: #d63031;
+            margin-bottom: 25px;
+            animation: popIn 0.5s ease;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .btn-container {
@@ -101,166 +133,179 @@
         }
 
         button {
-            padding: 14px 15px;
+            padding: 16px;
             font-size: 1.1rem;
             font-weight: 700;
-            color: #ffffff;
-            background: linear-gradient(135deg, #d4af37, #b8860b);
-            border: 1px solid #ffdf00;
-            border-radius: 8px;
+            color: #fff;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            border: none;
+            border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Lora', serif; /* Font chữ trên nút bấm */
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            font-family: 'Baloo 2', cursive;
+            box-shadow: 0 6px 15px rgba(108, 92, 231, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.4), rgba(255,255,255,0));
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+
+        button:hover::after {
+            left: 150%;
         }
 
         button:hover { 
-            background: linear-gradient(135deg, #ffdf00, #d4af37); 
-            color: #451a03;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.5);
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
         }
         
         button:active { transform: scale(0.95); }
 
         .start-btn { 
-            background: rgba(255, 255, 255, 0.8); 
-            color: #b45309; 
-            border: 2px solid #d4af37; 
-            font-family: 'Cormorant Garamond', serif; /* Nút bắt đầu dùng font cổ cho hoành tráng */
+            background: linear-gradient(135deg, #ff7675, #d63031); 
             font-size: 1.3rem;
-            letter-spacing: 1px;
+            box-shadow: 0 6px 15px rgba(214, 48, 49, 0.4);
         }
         .start-btn:hover {
-            background: #fffbeb;
-            color: #d4af37;
+            background: linear-gradient(135deg, #d63031, #ff7675);
+            box-shadow: 0 10px 20px rgba(214, 48, 49, 0.6);
         }
 
-        .note {
+        .encouragement-text {
             margin-top: 20px;
-            font-size: 1rem;
-            color: #0369a1; 
-            font-style: italic;
-            animation: breath 2s infinite;
+            font-size: 1.1rem;
+            color: #0984e3; 
+            font-weight: 700;
+            animation: bounce 2s infinite;
         }
 
-        @keyframes breath {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
-        .hidden { display: none; }
+        .hidden { display: none !important; }
 
         .confetti {
             position: absolute;
-            width: 6px; height: 6px; top: -10px;
-            z-index: 100; animation: fall linear forwards;
-            border-radius: 50%;
-            box-shadow: 0 0 10px currentColor;
+            z-index: 100; 
+            animation: fall linear forwards;
         }
-        @keyframes fall { to { transform: translateY(105vh) rotate(720deg); } }
-
-        .glow-text {
-            font-family: 'Cormorant Garamond', serif;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            animation: pulse 3s infinite;
-            font-size: 2.5rem;
-        }
-        @keyframes pulse { 50% { text-shadow: 0 0 25px rgba(212, 175, 55, 0.9); } }
-        
-        /* Chỉnh lại font cho bài thơ cho ra chất cổ phong */
-        .poem {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-style: italic;
-            color: #b45309;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        @keyframes fall { 
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } 
         }
     </style>
 </head>
 <body>
 
-    <div class="mist-container">
-        <div class="mist mist-1"></div>
-        <div class="mist mist-2"></div>
-        <div class="mist mist-3"></div>
-    </div>
+    <!-- Vùng chứa icon động -->
+    <div id="floating-container"></div>
 
     <div class="card" id="gameCard">
+        <!-- Màn hình chào mừng -->
         <div id="welcome-screen">
-            <h1>BÍ CẢNH KHẢO NGHIỆM</h1>
-            <p>Vượt qua huyễn trận này để đoạt lấy cơ duyên nhé Minh Ngọc!</p>
+            <h1 style="color: #6c5ce7; font-size: 2.5rem;">HELLUUU MAI! 🎁</h1>
+            <p>Chào mừng đến với HIEPCHALLENGE, hãy chứng minh độ "hiểu chuyện" qua mấy câu hỏi sau đây nhé!</p>
             <div class="btn-container">
-                <button class="start-btn" onclick="startQuiz()">THƯ VIỆN TRẬN PHÁP ✨</button>
+                <button class="start-btn" onclick="startQuiz()">CHƠI LUÔN SỢ GÌ 🚀</button>
             </div>
         </div>
 
+        <!-- Màn hình câu hỏi -->
         <div id="quiz-screen" class="hidden">
             <h1 id="question-text">Câu hỏi ở đây</h1>
             <div class="btn-container" id="options-container">
-                </div>
-            <p class="note" id="encouragement">CỐ LÊN, SẮP ĐẾN ĐÍCH RỒI!</p>
+                <!-- Nút tự động render -->
+            </div>
+            <p class="encouragement-text" id="encouragement">Cố lên!</p>
         </div>
 
+        <!-- Màn hình chuyển tiếp -->
         <div id="transition-screen" class="hidden">
-            <h1 class="glow-text">KHẢO NGHIỆM THÀNH CÔNG</h1>
-            <p>CHÚC MỪNG ĐẠO HỮU ĐÃ VƯỢT QUA KHẢO NGHIỆM!</p>
-            <div class="btn-container" style="margin-top: 40px;">
-                <button class="start-btn" onclick="showResult()">ẤN VÀO ĐÂY ĐỂ ĐÓN NHẬN CƠ DUYÊN 🎁</button>
+            <h1 class="rainbow-text" style="font-size: 2.8rem;">QUÁ ĐỈNH! 🎉</h1>
+            <p>Đúng là bạn tốt, trả lời không trượt phát nào! Mời bạn nhấn nút bên dưới để nhận phần thưởng.</p>
+            <div class="btn-container" style="margin-top: 30px;">
+                <button class="start-btn" onclick="showResult()" style="background: linear-gradient(135deg, #00b894, #55efc4); box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);">MỞ QUÀ NGAY 💌</button>
             </div>
         </div>
 
+        <!-- Màn hình kết quả (Lời chúc) -->
         <div id="result-screen" class="hidden">
-            <h1 class="glow-text">Sinh Thần Khoái Lạc! 🎉</h1>
+            <h1 class="rainbow-text">HAPPY BIRTHDAY! 🎂</h1>
             
-            <p class="poem">
-                Sinh thần vừa tới mây giăng lối,<br>
-                Nhật nguyệt xoay vần mở vận thiên.<br>
-                Đạo hữu hôm nay thêm tuổi mới,<br>
-                Tu vi tinh tiến, đắc cơ duyên.
-            </p>
-        
             <p style="text-align: justify;">
-                Nhân ngày sinh thần, chúc đạo hữu tuổi mới tu vi đại tiến, 
-                vận khí hanh thông, mọi tâm ma đều tiêu tán. 
-                Mong con đường phía trước của đạo hữu luôn có quý nhân tương trợ, 
-                khó khăn hóa thành cơ duyên, khổ đau hóa thành sức mạnh.
+                Chúc XMai tuổi mới lúc nào cũng rạng rỡ, vui vẻ và tràn trề năng lượng nhé! Học hành nhẹ nhàng sương sương mà điểm vẫn cao chót vót.
             </p>
         
-            <p style="margin-top: 15px;">
-                Được quen biết đạo hữu là một đoạn thiện duyên đáng quý. 
-                Chúc đạo hữu sinh thần khoái lạc, sớm ngày phi thăng!
+            <p style="text-align: justify; margin-top: 15px;">
+                Mong mọi mục tiêu trong năm nay đều hoàn thành xuất sắc, có nhiều thời gian đi cà phê, đi ăn lẩu và đặc biệt đọc tus của t. 
+            </p>
+
+            <p style="text-align: justify; margin-top: 15px; font-weight: 700; color: #d63031;">
+                *Sau cùng thì: Put the daily grind on pause, let your hair down, and get ready to paint the town red!*
             </p>
         
-            <p style="margin-top:25px; text-align: right; color: #b45309; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">
-                <i>(Ngô Hiệp Chân Nhân)</i>
+            <p style="margin-top:25px; text-align: right; color: #6c5ce7; font-size: 1.3rem; font-weight: 800;">
+                ~ Hiệp ~
             </p>
         </div>
     </div>
 
     <script>
+        // Tạo các icon bay lơ lửng ngẫu nhiên làm nền
+        function createFloatingIcons() {
+            const container = document.getElementById('floating-container');
+            const icons = ['✨', '💖', '🎉', '🎁', '🎈', '🎮', '🍗', '🧋'];
+            
+            setInterval(() => {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                icon.innerText = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.left = Math.random() * 100 + 'vw';
+                icon.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                icon.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+                container.appendChild(icon);
+
+                // Tự xóa sau khi bay hết màn hình
+                setTimeout(() => { icon.remove(); }, 10000);
+            }, 500);
+        }
+
+        // Khởi động nền động
+        createFloatingIcons();
+
+        // Bộ câu hỏi đúng như bạn yêu cầu (Đã đổi tên thành Mai)
         const quizData = [
             {
-                question: "Hiệp trong mắt Ngọc là người như thế nào? 🤔",
+                question: "Hiệp trong mắt Mai là người như thế nào? 🤔",
                 options: ["Siêu cấp VIP PRO", "Yêu thương bạn bè", "Đáng tin cậy", "Tất cả đều đúng"],
-                encouragement: "Tâm niệm vững vàng, chọn đi đạo hữu!"
+                encouragement: "Cứ chọn thật lòng nhé..."
             },
             {
-                question: "Mỗi lần gặp Hiệp, suy nghĩ đầu tiên của Ngọc là gì?",
-                options: ["Cho Hiệp tiền", "Bao Hiệp ăn", "Tùy tâm trạng mà 1 trong 2", "Làm 3 cái một lượt"],
-                encouragement: "Đừng để tâm ma che mờ lý trí..."
+                question: "Mỗi lần gặp Hiệp, suy nghĩ đầu tiên của Mai là gì?",
+                options: ["Cho Hiệp tiền", "Bao Hiệp ăn", "Tùy tâm trạng mà 1 trong 2", "Tất tay làm cả 2 cái trên"],
+                encouragement: "Cứ chọn thật lòng nhé..."
             },
             {
-                question: "Món ăn nào mà hiện tại Ngọc muốn bao Hiệp nhất?",
-                options: ["Gà KFC", "Trà sữa", "Dookki", "Gì cũng muốn bao"],
-                encouragement: "Sắp đột phá cảnh giới rồi!"
+                question: "Món ăn nào mà hiện tại Mai muốn bao Hiệp nhất?",
+                options: ["Gà KFC", "Trà sữa", "Dookki/Lẩu", "Gì cũng muốn bao"],
+                encouragement: "Sắp đến rồi...!"
             },
             {
-                question: "Lời hứa quan trọng nhất tuổi mới là gì?",
+                question: "Lời hứa quan trọng nhất tuổi mới của Mai là gì?",
                 options: ["Kiếm nhiều tiền", "Học chăm", "Bao Hiệp ăn KFC", "Học chăm, kiếm nhiều tiền để bao Hiệp ăn KFC mỗi ngày"],
-                encouragement: "Ải cuối cùng, cẩn thận sấm sét kiếp nạn!"
+                encouragement: "Câu cuối cùng, cẩn thận!"
             }
         ];
 
@@ -274,7 +319,12 @@
 
         function showQuestion() {
             const data = quizData[currentQuestion];
-            document.getElementById('question-text').innerText = data.question;
+            // Hiệu ứng giật (pop) nhẹ khi đổi câu hỏi
+            const questionEl = document.getElementById('question-text');
+            questionEl.innerText = data.question;
+            questionEl.style.animation = 'none';
+            setTimeout(() => questionEl.style.animation = 'popIn 0.5s ease', 10);
+
             document.getElementById('encouragement').innerText = data.encouragement;
             
             const optionsContainer = document.getElementById('options-container');
@@ -305,20 +355,35 @@
         function showResult() {
             document.getElementById('transition-screen').classList.add('hidden');
             document.getElementById('result-screen').classList.remove('hidden');
-            document.getElementById('gameCard').style.boxShadow = "0 0 50px rgba(255, 255, 255, 0.8)";
-            createConfetti();
+            
+            // Tăng hiệu ứng khung phát sáng
+            document.getElementById('gameCard').style.animation = 'none';
+            document.getElementById('gameCard').style.boxShadow = "0 0 50px rgba(253, 121, 168, 1), 0 0 100px rgba(116, 185, 255, 0.8)";
+            
+            createExplosiveConfetti();
         }
 
-        function createConfetti() {
-            const colors = ['#d4af37', '#fbbf24', '#38bdf8', '#818cf8'];
-            for (let i = 0; i < 100; i++) {
+        // Hiệu ứng pháo giấy nổ tung lồng lộn hơn
+        function createExplosiveConfetti() {
+            const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fd79a8'];
+            for (let i = 0; i < 150; i++) {
                 let conf = document.createElement('div');
                 conf.className = 'confetti';
                 conf.style.left = Math.random() * 100 + 'vw';
-                conf.style.color = colors[Math.floor(Math.random() * colors.length)];
-                conf.style.backgroundColor = conf.style.color;
-                conf.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                conf.style.animationDelay = (Math.random() * 2) + 's';
+                
+                // Random hình vuông hoặc tròn
+                if (Math.random() > 0.5) {
+                    conf.style.width = (Math.random() * 10 + 5) + 'px';
+                    conf.style.height = conf.style.width;
+                    conf.style.borderRadius = '50%';
+                } else {
+                    conf.style.width = (Math.random() * 15 + 5) + 'px';
+                    conf.style.height = (Math.random() * 8 + 4) + 'px';
+                }
+
+                conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+                conf.style.animationDelay = (Math.random() * 0.5) + 's';
                 document.body.appendChild(conf);
             }
         }
