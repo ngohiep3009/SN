@@ -3,415 +3,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bí Cảnh Vấn Tâm - Chúc Mừng Khánh 🎂✨</title>
+    <title>Kỷ Nguyên Phi Thăng - Ngọc Khánh Thượng Nhân</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            /* Nền sáng, mờ ảo như tiên giới ban ngày */
-            background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #e0c3fc, #f5f7fa, #d4fc79);
+            /* Nền bồng lai tươi sáng: Trắng, Xanh ngọc, Hồng nhạt pha lê */
+            background: linear-gradient(-45deg, #f0f9ff, #e0f2fe, #fdf4ff, #fffbeb, #e0f2fe);
             background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #1e293b;
-            font-family: 'Philosopher', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
+            animation: daylightGradient 20s ease infinite;
+            color: #0f172a;
+            font-family: 'Cormorant Garamond', serif;
+            overflow: hidden; 
             position: relative;
+            height: 100vh;
+            width: 100vw;
         }
 
-        /* Lớp sương mù mờ ảo (tiên khí sáng) */
-        body::before, body::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%),
-                        radial-gradient(circle, rgba(161, 196, 253, 0.3) 0%, transparent 50%);
-            animation: mistFlow 25s linear infinite;
-            pointer-events: none;
-            z-index: 0;
-        }
-        body::after {
-            animation-direction: reverse;
-            animation-duration: 35s;
-        }
-
-        @keyframes gradientBG {
+        @keyframes daylightGradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        @keyframes mistFlow {
-            0% { transform: rotate(0deg) translate(0, 0); }
-            50% { transform: rotate(180deg) translate(-2%, 2%); }
-            100% { transform: rotate(360deg) translate(0, 0); }
-        }
-
-        #floating-container {
+        /* --- HỆ THỐNG SÔNG NÚI CUỘN TRÔI (MÀU TƯƠI SÁNG) --- */
+        .landscape {
             position: absolute;
-            top: 0; left: 0; width: 100vw; height: 100vh;
+            bottom: 0; left: 0;
+            width: 300vw; 
+            height: 100%;
             pointer-events: none;
             z-index: 1;
-            overflow: hidden;
         }
 
-        .floating-icon {
-            position: absolute;
-            font-size: 2rem;
-            animation: floatUp linear infinite;
+        /* Núi xa (Màu xanh lơ nhạt, hòa vào sương) */
+        .mountain-back {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" preserveAspectRatio="none"><path d="M0,300 L150,120 L300,220 L500,80 L700,250 L850,150 L1000,300 Z" fill="%23bae6fd"/></svg>') repeat-x bottom;
+            background-size: 100vw 45vh;
+            animation: panLeft 50s linear infinite;
+            opacity: 0.6;
+        }
+
+        /* Núi giữa (Xanh ngọc pha chút rêu sáng) */
+        .mountain-mid {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" preserveAspectRatio="none"><path d="M0,300 L200,180 L350,100 L550,280 L750,120 L900,200 L1000,300 Z" fill="%237dd3fc"/></svg>') repeat-x bottom;
+            background-size: 100vw 35vh;
+            animation: panLeft 35s linear infinite;
             opacity: 0.7;
-            filter: drop-shadow(0 4px 6px rgba(0, 150, 255, 0.2));
         }
 
-        @keyframes floatUp {
-            0% { transform: translateY(110vh) rotate(0deg) scale(0.6); opacity: 0; }
-            10% { opacity: 0.9; }
-            90% { opacity: 0.9; }
-            100% { transform: translateY(-10vh) rotate(360deg) scale(1.3); opacity: 0; }
+        /* Núi gần (Đậm hơn một chút để tạo chiều sâu) */
+        .mountain-front {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" preserveAspectRatio="none"><path d="M0,300 L100,220 L250,150 L400,280 L600,180 L800,260 L1000,300 Z" fill="%2338bdf8"/></svg>') repeat-x bottom;
+            background-size: 100vw 20vh;
+            animation: panLeft 20s linear infinite;
+            opacity: 0.9;
         }
 
-        /* Khung hiển thị ngọc bài (Sáng & Trong suốt) */
-        .card {
-            background: rgba(255, 255, 255, 0.65); 
-            padding: 40px 30px;
-            border-radius: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.6); 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            text-align: center;
-            max-width: 550px;
-            width: 90%;
-            position: relative;
-            z-index: 10; 
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            animation: cardBreathe 4s infinite alternate;
-        }
-
-        @keyframes cardBreathe {
-            0% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 20px rgba(161, 196, 253, 0.4); }
-            100% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 45px rgba(224, 195, 252, 0.6); }
-        }
-
-        h1 { 
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem; 
-            margin-bottom: 10px; 
-            font-weight: 700; 
-            letter-spacing: 1px;
-            color: #0369a1;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-        }
-        
-        .magic-text {
-            background-image: linear-gradient(to right, #d97706, #be123c, #0284c7, #7c3aed);
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: magicAnim 5s linear infinite;
-            background-size: 200% auto;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
-
-        @keyframes magicAnim {
-            to { background-position: 200% center; }
-        }
-
-        p { 
-            font-size: 1.25rem; 
-            line-height: 1.6; 
-            color: #334155; 
-            font-weight: 600;
-        }
-
-        #question-text {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #be123c;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-            margin-bottom: 25px;
-            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        @keyframes popIn {
-            0% { transform: scale(0.8) translateY(20px); opacity: 0; }
-            100% { transform: scale(1) translateY(0); opacity: 1; }
-        }
-
-        .btn-container {
-            display: grid;
-            grid-template-columns: 1fr; 
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        button {
-            padding: 16px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #fff;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Philosopher', sans-serif;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        button::before {
-            content: '';
+        /* Lớp sương mù trắng xóa, bồng bềnh dưới chân núi */
+        .mist-layer {
             position: absolute;
-            top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
-            transform: skewX(-25deg);
-            transition: 0.6s;
+            bottom: 0; left: 0; width: 100vw; height: 40vh;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.7) 40%, transparent 100%);
+            filter: blur(10px);
+            z-index: 2;
+            animation: breatheMist 6s infinite alternate ease-in-out;
         }
 
-        button:hover::before {
-            left: 150%;
-        }
-
-        button:hover { 
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
-            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
-        }
-        
-        button:active { transform: scale(0.97); }
-
-        .start-btn { 
-            background: linear-gradient(135deg, #10b981, #059669); 
-            font-size: 1.3rem;
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-        }
-        .start-btn:hover {
-            background: linear-gradient(135deg, #059669, #10b981);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.6);
-        }
-
-        .encouragement-text {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #0369a1; 
-            font-style: italic;
-            animation: floatText 3s infinite ease-in-out;
-        }
-
-        @keyframes floatText {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .hidden { display: none !important; }
-
-        .spiritual-energy {
+        /* Hào quang rực rỡ từ trên trời chiếu xuống */
+        .god-rays {
             position: absolute;
-            z-index: 100; 
+            top: -20%; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at 50% 0%, rgba(253, 230, 138, 0.4) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes panLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100vw); }
+        }
+
+        @keyframes breatheMist {
+            0% { opacity: 0.8; height: 35vh; }
+            100% { opacity: 1; height: 45vh; }
+        }
+
+        /* --- HỆ THỐNG LINH KHÍ ĐOM ĐÓM & CÁNH HOA TƯƠI SÁNG --- */
+        #particle-container {
+            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 3; pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
             border-radius: 50%;
-            box-shadow: 0 0 15px currentColor;
-            animation: fallEnergy linear forwards;
-        }
-        @keyframes fallEnergy { 
-            0% { transform: translateY(-10vh) scale(0.5); opacity: 1; }
-            100% { transform: translateY(110vh) scale(1.5); opacity: 0; } 
+            background: #fff;
+            box-shadow: 0 0 15px 4px rgba(251, 191, 36, 0.8), 0 0 30px 8px rgba(255, 255, 255, 0.6);
+            opacity: 0;
+            animation: floatOrb linear infinite;
         }
 
-        .poem-text {
-            font-size: 1.35rem; 
-            line-height: 1.8; 
-            color: #0f172a; 
-            font-weight: 700; 
-            font-style: italic; 
-            margin-top: 20px;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        .petal {
+            position: absolute;
+            font-size: 1.2rem;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
+            animation: fallPetal linear infinite;
         }
+
+        @keyframes floatOrb {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            20% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        @keyframes fallPetal {
+            0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
+            20% { opacity: 0.9; }
+            80% { opacity: 0.9; }
+            100% { transform: translateY(110vh) rotate(360deg) translateX(50px); opacity: 0; }
+        }
+
+        /* --- CONTAINER HIỂN THỊ CHỮ VÀ MINH HỌA --- */
+        #scene-container {
+            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10;
+        }
+
+        .scene-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 85%; max-width: 1200px;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .scene-layout.active { opacity: 1; pointer-events: auto; }
+        .scene-layout.fade-out { opacity: 0; filter: blur(10px); transform: scale(1.1); }
+
+        .align-left { flex-direction: row; transform: translateX(-40px); }
+        .align-right { flex-direction: row-reverse; transform: translateX(40px); }
+        .align-center { flex-direction: column; justify-content: center; text-align: center; transform: translateY(30px); }
+        
+        .scene-layout.active.align-left, 
+        .scene-layout.active.align-right,
+        .scene-layout.active.align-center { transform: translate(0, 0); }
+
+        .text-box { flex: 1.2; padding: 0 40px; }
+        .illust-box { flex: 0.8; display: flex; justify-content: center; align-items: center; }
+
+        /* Typography cho nền sáng: Chữ sẫm màu, viền sáng trắng bọc ngoài */
+        .epic-title {
+            font-family: 'Philosopher', sans-serif; font-size: 4rem; font-weight: 700;
+            background-image: linear-gradient(to right, #b45309, #ea580c, #b45309);
+            -webkit-background-clip: text; color: transparent;
+            text-shadow: 2px 2px 0px #fff, 0 0 30px rgba(255, 255, 255, 1); 
+            letter-spacing: 5px; margin-bottom: 15px;
+        }
+        
+        .epic-subtitle { font-size: 2rem; color: #0284c7; font-style: italic; letter-spacing: 2px; font-weight: 600; text-shadow: 1px 1px 0px #fff, 0 0 10px rgba(255,255,255,0.8); }
+
+        .story-text {
+            font-size: 2.3rem; line-height: 1.7; color: #1e293b; font-weight: 700;
+            /* Đổ bóng trắng dày để chữ không bị chìm vào núi */
+            text-shadow: 2px 2px 0px #fff, -2px -2px 0px #fff, 2px -2px 0px #fff, -2px 2px 0px #fff, 0 0 20px rgba(255,255,255,1);
+        }
+
+        .name-highlight {
+            font-family: 'Philosopher', sans-serif; font-size: 5rem; font-weight: 700;
+            color: #be123c; text-shadow: 2px 2px 0px #fff, 0 0 40px rgba(255, 255, 255, 1), 0 0 20px rgba(190, 18, 60, 0.5);
+            letter-spacing: 3px; animation: pulseName 2s infinite alternate; margin-top: 20px;
+        }
+
+        @keyframes pulseName {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); text-shadow: 2px 2px 0px #fff, 0 0 50px rgba(251, 191, 36, 0.8), 0 0 30px rgba(190, 18, 60, 0.8); }
+        }
+
+        /* Hư ảnh phát sáng (Glow Artifacts) */
+        .glowing-artifact {
+            font-size: 11rem; line-height: 1;
+            filter: drop-shadow(0 0 40px rgba(251, 191, 36, 1)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.9));
+            animation: artifactFloat 4s infinite ease-in-out alternate;
+        }
+
+        @keyframes artifactFloat {
+            0% { transform: translateY(0) rotate(-5deg); filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.8)); }
+            100% { transform: translateY(-30px) rotate(5deg); filter: drop-shadow(0 0 60px rgba(251, 191, 36, 1)) drop-shadow(0 0 30px rgba(255, 255, 255, 1)); }
+        }
+
+        /* --- NGỌC GIẢN CUỐI CÙNG (Kính mờ trắng tinh khôi) --- */
+        #final-card {
+            background: rgba(255, 255, 255, 0.75); padding: 50px; border-radius: 20px;
+            border: 2px solid rgba(251, 191, 36, 0.6);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(255, 255, 255, 1);
+            backdrop-filter: blur(15px); text-align: center;
+            display: none; opacity: 0; transform: translateY(30px) scale(0.9);
+            transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative; z-index: 20; max-width: 800px;
+        }
+        
+        #final-card.show { display: block; }
+        #final-card.visible { opacity: 1; transform: translateY(0) scale(1); }
+
+        .poem-title { font-family: 'Philosopher', sans-serif; font-size: 2.8rem; color: #d97706; margin-bottom: 25px; text-shadow: 0 0 15px rgba(255, 255, 255, 1); }
+        .poem-text { font-size: 2rem; line-height: 1.8; color: #0f172a; font-weight: 700; font-style: italic; }
+        .signature { margin-top: 40px; font-size: 1.8rem; color: #0284c7; text-align: right; font-weight: 700; }
+
+        #skip-btn {
+            position: fixed; bottom: 20px; right: 20px; z-index: 100;
+            background: rgba(255, 255, 255, 0.8); border: 2px solid #38bdf8;
+            padding: 12px 25px; border-radius: 30px; color: #0284c7;
+            font-family: 'Philosopher', sans-serif; font-size: 1.2rem; font-weight: 700;
+            cursor: pointer; backdrop-filter: blur(5px); transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        #skip-btn:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4); }
     </style>
 </head>
 <body>
 
-    <!-- Vùng chứa linh khí lơ lửng -->
-    <div id="floating-container"></div>
+    <!-- Lớp hào quang chiếu sáng -->
+    <div class="god-rays"></div>
 
-    <div class="card" id="gameCard">
-        <!-- Màn hình chào mừng -->
-        <div id="welcome-screen">
-            <h1 style="color: #0284c7; font-size: 2.3rem;">CHÀO ĐẠO HỮU! ☁️</h1>
-            <p>Chào mừng đạo hữu đến với Bí Cảnh <b>HIEPCHALLENGE</b>. Hãy chứng minh đạo tâm kiên định qua mấy ải vấn tâm sau đây để nhận được cơ duyên nhé!</p>
-            <div class="btn-container">
-                <button class="start-btn" onclick="startQuiz()">ĐỘ KIẾP LUÔN🚀</button>
-            </div>
-        </div>
+    <!-- Lớp cảnh sắc núi non tươi sáng cuộn trôi -->
+    <div class="landscape mountain-back"></div>
+    <div class="landscape mountain-mid"></div>
+    <div class="landscape mountain-front"></div>
+    
+    <!-- Sương mù bồng lai -->
+    <div class="mist-layer"></div>
 
-        <!-- Màn hình câu hỏi -->
-        <div id="quiz-screen" class="hidden">
-            <h1 id="question-text">Câu hỏi ở đây</h1>
-            <div class="btn-container" id="options-container">
-            </div>
-            <p class="encouragement-text" id="encouragement">Giữ vững tâm thần...</p>
-        </div>
+    <!-- Hạt linh khí phát sáng & Cánh hoa -->
+    <div id="particle-container"></div>
 
-        <!-- Màn hình chuyển tiếp -->
-        <div id="transition-screen" class="hidden">
-            <h1 class="magic-text" style="font-size: 2.6rem;">ĐẠO TÂM KIÊN ĐỊNH! 🎉</h1>
-            <p>Đúng là bằng hữu chi giao, vượt ải không trượt phát nào! Mời đạo hữu nhấn nút bên dưới để nhận kỳ ngộ.</p>
-            <div class="btn-container" style="margin-top: 30px;">
-                <button class="start-btn" onclick="showResult()" style="background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);">NHẬN KỲ NGỘ 📜</button>
-            </div>
-        </div>
+    <!-- Vùng chiếu kịch bản -->
+    <div id="scene-container"></div>
 
-        <!-- Màn hình kết quả (Lời chúc Thơ) -->
-        <div id="result-screen" class="hidden">
-            <h1 class="magic-text">CHÚC MỪNG PHI THĂNG! 🎂☁️</h1>
-            
-            <div class="poem-text">
-                Chúc Khánh tuổi mới rạng ngời,<br>
-                Tu vi đột phá, đất trời bao la.<br>
-                Tiêu diêu ngự kiếm xông pha,<br>
-                Linh thạch đầy túi, hào quang ngút ngàn.<br>
-                Rảnh rỗi bổng lộc phát ban,<br>
-                Mời Hiệp xơi lẩu, dạo đàn cà phê.<br>
-                Đạo tâm kiên định chẳng chê,<br>
-                Cả năm suôn sẻ, tràn trề tiên phong!
-            </div>
-        
-            <p style="margin-top:25px; text-align: right; color: #0284c7; font-size: 1.4rem; font-family: 'Playfair Display', serif; font-weight: 800;">
-                ~ Hiệp ~
-            </p>
+    <!-- Ngọc giản xuất hiện cuối cùng -->
+    <div id="final-card">
+        <h2 class="poem-title">TÂM Ý NGỌC GIẢN 📜</h2>
+        <div class="poem-text">
+            Tuế nguyệt xoay vần thêm một thu,<br>
+            Chúc cho đạo hữu thuận đường tu.<br>
+            Bình cảnh phá vỡ, tài nguyên tiến,<br>
+            Linh thạch đầy túi, bớt âu lo.<br><br>
+            Rảnh rỗi vân du nếm mỹ vị,<br>
+            Mời ta lẩu nướng, chén linh trà.<br>
+            Đạo tâm kiên định, không lùi bước,<br>
+            Tiên đồ rộng mở, tựa mây xa!
         </div>
+        <p class="signature"><br>Ngô Hiệp lão quỷ</p>
     </div>
 
+    <button id="skip-btn" onclick="skipToEnd()">Lướt Qua Huyễn Cảnh ⏭</button>
+
     <script>
-        function createFloatingIcons() {
-            const container = document.getElementById('floating-container');
-            const icons = ['☁️', '✨', '🌸', '☯️', '📜', '🔮', '🐉', '❄️'];
+        // --- 1. TẠO LINH KHÍ ĐOM ĐÓM & CÁNH HOA TƯƠI SÁNG ---
+        function createParticles() {
+            const container = document.getElementById('particle-container');
             
+            // Tạo đom đóm sáng
             setInterval(() => {
-                const icon = document.createElement('div');
-                icon.className = 'floating-icon';
-                icon.innerText = icons[Math.floor(Math.random() * icons.length)];
-                icon.style.left = Math.random() * 100 + 'vw';
-                icon.style.animationDuration = (Math.random() * 10 + 8) + 's';
-                icon.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
-                container.appendChild(icon);
+                const orb = document.createElement('div');
+                orb.className = 'orb';
+                const size = Math.random() * 5 + 3;
+                orb.style.width = size + 'px';
+                orb.style.height = size + 'px';
+                orb.style.left = Math.random() * 100 + 'vw';
+                orb.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                container.appendChild(orb);
+                setTimeout(() => { orb.remove(); }, 25000);
+            }, 400); 
 
-                setTimeout(() => { icon.remove(); }, 15000);
-            }, 600);
+            // Tạo cánh hoa rơi (🌸, 💮, 🍃, ✨)
+            const petals = ['🌸', '💮', '✨', '☁️'];
+            setInterval(() => {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.innerText = petals[Math.floor(Math.random() * petals.length)];
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = (Math.random() * 12 + 8) + 's';
+                container.appendChild(petal);
+                setTimeout(() => { petal.remove(); }, 20000);
+            }, 800);
         }
+        createParticles();
 
-        createFloatingIcons();
-
-        const quizData = [
-            {
-                question: "Hiệp trong mắt Khánh là vị cao nhân phương nào? 🤔",
-                options: ["Tuyệt thế cao thủ, pháp lực vô biên", "Hảo đệ huynh trọng tình trọng nghĩa", "Bậc hiền triết đáng tin cậy", "Tất cả đều đúng (Thiên Đạo chứng giám)"],
-                encouragement: "Dùng thần thức để cảm nhận đáp án..."
+        // --- 2. KỊCH BẢN CHỮ ĐAN CHÉO (CÓ MINH HỌA) ---
+        const scenes = [
+            { 
+                align: 'center', 
+                text: `<div class="epic-title">THIÊN ĐỊA BIẾN HẢI</div><div class="epic-subtitle">Quyển 1: Tiên Nhân Giáng Thế</div>`, 
+                illu: ``, 
+                duration: 5000 
             },
-            {
-                question: "Mỗi lần gặp Hiệp, suy nghĩ đầu tiên trong thức hải của Khánh là gì?",
-                options: ["Cống nạp linh thạch (Cho tiền)", "Mời xơi tiên đan, ngự thiện (Bao ăn)", "Tùy cơ duyên mà 1 trong 2", "Tất tay làm cả 2 (Đại gia tu chân)"],
-                encouragement: "Thành tâm tất ứng..."
+            { 
+                align: 'left', 
+                text: `<div class="story-text">Thuở hồng hoang vỡ lở, hỗn loạn sơ khai, vạn vật đều ấp ủ mộng trường sinh bất lão...</div>`, 
+                illu: `<div class="glowing-artifact">☯</div>`, 
+                duration: 4500 
             },
-            {
-                question: "Món tiên thực nào mà hiện tại Khánh muốn bao Hiệp nhất?",
-                options: ["Gà linh điểu (KFC)", "Tiên lộ ngọc dịch (Trà sữa)", "Linh hỏa lẩu (Dookki/Lẩu)", "Món gì cũng duyệt"],
-                encouragement: "Sắp vượt kiếp thành công rồi...!"
+            { 
+                align: 'right', 
+                text: `<div class="story-text">Đại đạo ba ngàn, kẻ cầu đạo nhiều như cá diếc qua sông. Người đắc đạo lại hiếm như phù dung sớm nở tối tàn.</div>`, 
+                illu: `<div class="glowing-artifact">🪷</div>`, 
+                duration: 5000 
             },
-            {
-                question: "Lời thề đại đạo quan trọng nhất tuổi mới của Khánh là gì?",
-                options: ["Thu thập nhiều linh thạch", "Bế quan tu luyện", "Bao Hiệp xơi gà linh điểu", "Tu vi đột phá, linh thạch dư dả để bao Hiệp mỗi ngày"],
-                encouragement: "Ải cuối cùng, cẩn thận tâm ma!"
+            { 
+                align: 'left', 
+                text: `<div class="story-text">Tu tiên vốn là nghịch thiên cải mệnh, giẫm lên lôi kiếp, đạp phá cửu tuyền.</div>`, 
+                illu: `<div class="glowing-artifact">⚡</div>`, 
+                duration: 4500 
+            },
+            { 
+                align: 'right', 
+                text: `<div class="story-text">Tuế nguyệt vô tình, ngàn năm chớp mắt đã hóa bụi mờ... Thế nhưng, giữa dòng tinh hà vô tận ấy...</div>`, 
+                illu: `<div class="glowing-artifact">✨</div>`, 
+                duration: 5000 
+            },
+            { 
+                align: 'left', 
+                text: `<div class="story-text">Khí thế bễ nghễ, uy trấn Bát Hoang. Một kiếm vung ra, sương hàn lạnh buốt mười bốn châu!</div>`, 
+                illu: `<div class="glowing-artifact">⚔️</div>`, 
+                duration: 5000 
+            },
+            { 
+                align: 'center', 
+                text: `<div class="story-text" style="font-size:2rem; margin-bottom: 10px;">Vạn vạn tu sĩ đều cúi đầu bái phục, kính cẩn tôn xưng...</div><div class="name-highlight">NGỌC KHÁNH THƯỢNG NHÂN</div>`, 
+                illu: ``, 
+                duration: 6000 
+            },
+            { 
+                align: 'right', 
+                text: `<div class="story-text">Hôm nay, tử khí đông lai, thụy quang phủ chiếu. Chính là kỉ niệm sinh thần giáng thế của người!</div>`, 
+                illu: `<div class="glowing-artifact">🐉</div>`, 
+                duration: 5000 
             }
         ];
 
-        let currentQuestion = 0;
+        let currentScene = 0;
+        let sceneTimeout = null;
+        let isSkipped = false;
+        const container = document.getElementById('scene-container');
 
-        function startQuiz() {
-            document.getElementById('welcome-screen').classList.add('hidden');
-            document.getElementById('quiz-screen').classList.remove('hidden');
-            showQuestion();
-        }
+        function playNextScene() {
+            if (isSkipped) return;
+            if (currentScene >= scenes.length) {
+                showFinalCard();
+                return;
+            }
 
-        function showQuestion() {
-            const data = quizData[currentQuestion];
-            const questionEl = document.getElementById('question-text');
-            questionEl.innerText = data.question;
+            const data = scenes[currentScene];
             
-            questionEl.style.animation = 'none';
-            void questionEl.offsetWidth;
-            questionEl.style.animation = 'popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-
-            document.getElementById('encouragement').innerText = data.encouragement;
+            const layout = document.createElement('div');
+            layout.className = `scene-layout align-${data.align}`;
             
-            const optionsContainer = document.getElementById('options-container');
-            optionsContainer.innerHTML = ''; 
-
-            data.options.forEach(option => {
-                const btn = document.createElement('button');
-                btn.innerText = option;
-                btn.onclick = nextQuestion;
-                optionsContainer.appendChild(btn);
-            });
-        }
-
-        function nextQuestion() {
-            currentQuestion++;
-            if (currentQuestion < quizData.length) {
-                showQuestion();
+            if(data.align === 'center') {
+                layout.innerHTML = `<div class="text-box" style="text-align: center;">${data.text}</div>`;
             } else {
-                showTransition(); 
+                layout.innerHTML = `
+                    <div class="text-box" style="text-align: ${data.align === 'left' ? 'left' : 'right'};">${data.text}</div>
+                    <div class="illust-box">${data.illu}</div>
+                `;
             }
+
+            container.innerHTML = ''; 
+            container.appendChild(layout);
+
+            setTimeout(() => { if(!isSkipped) layout.classList.add('active'); }, 100);
+
+            sceneTimeout = setTimeout(() => {
+                if(isSkipped) return;
+                layout.classList.remove('active');
+                layout.classList.add('fade-out');
+                
+                setTimeout(() => {
+                    currentScene++;
+                    playNextScene();
+                }, 1200); 
+            }, data.duration);
         }
 
-        function showTransition() {
-            document.getElementById('quiz-screen').classList.add('hidden');
-            document.getElementById('transition-screen').classList.remove('hidden');
-        }
-
-        function showResult() {
-            document.getElementById('transition-screen').classList.add('hidden');
-            document.getElementById('result-screen').classList.remove('hidden');
+        function showFinalCard() {
+            container.style.display = 'none'; 
+            document.getElementById('skip-btn').style.display = 'none';
             
-            document.getElementById('gameCard').style.animation = 'none';
-            document.getElementById('gameCard').style.boxShadow = "0 0 30px rgba(124, 58, 237, 0.4), 0 0 60px rgba(2, 132, 199, 0.4), inset 0 0 30px rgba(255,255,255,0.8)";
-            document.getElementById('gameCard').style.border = "2px solid rgba(139, 92, 246, 0.6)";
-            
-            createSpiritualEnergyBurst();
+            const card = document.getElementById('final-card');
+            card.classList.add('show');
+            setTimeout(() => { card.classList.add('visible'); }, 100);
         }
 
-        function createSpiritualEnergyBurst() {
-            const colors = ['#38bdf8', '#818cf8', '#34d399', '#fbbf24', '#f472b6', '#ffffff'];
-            for (let i = 0; i < 120; i++) {
-                let energy = document.createElement('div');
-                energy.className = 'spiritual-energy';
-                energy.style.left = Math.random() * 100 + 'vw';
-                
-                let size = Math.random() * 8 + 3;
-                energy.style.width = size + 'px';
-                energy.style.height = size + 'px';
-                
-                energy.style.color = colors[Math.floor(Math.random() * colors.length)];
-                energy.style.backgroundColor = energy.style.color;
-                
-                energy.style.animationDuration = (Math.random() * 2.5 + 1.5) + 's';
-                energy.style.animationDelay = (Math.random() * 0.3) + 's';
-                document.body.appendChild(energy);
-            }
+        function skipToEnd() {
+            isSkipped = true;
+            clearTimeout(sceneTimeout);
+            showFinalCard();
         }
+
+        setTimeout(() => { playNextScene(); }, 1000);
     </script>
 </body>
 </html>
