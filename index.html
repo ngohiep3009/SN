@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cheers-to-mai 🎂✨</title>
+    <title>Bí Cảnh Vấn Tâm - Chúc Mừng Khánh 🎂✨</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -14,12 +14,12 @@
         }
 
         body {
-            /* Hiệu ứng nền chuyển màu liên tục siêu ảo diệu */
-            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
+            /* Nền sáng, mờ ảo như tiên giới ban ngày */
+            background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #e0c3fc, #f5f7fa, #d4fc79);
             background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite;
-            color: #2d3436;
-            font-family: 'Baloo 2', cursive;
+            animation: gradientBG 15s ease infinite;
+            color: #1e293b;
+            font-family: 'Philosopher', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -30,13 +30,35 @@
             position: relative;
         }
 
+        /* Lớp sương mù mờ ảo (tiên khí sáng) */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%),
+                        radial-gradient(circle, rgba(161, 196, 253, 0.3) 0%, transparent 50%);
+            animation: mistFlow 25s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        body::after {
+            animation-direction: reverse;
+            animation-duration: 35s;
+        }
+
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Vùng chứa các icon bay lơ lửng */
+        @keyframes mistFlow {
+            0% { transform: rotate(0deg) translate(0, 0); }
+            50% { transform: rotate(180deg) translate(-2%, 2%); }
+            100% { transform: rotate(360deg) translate(0, 0); }
+        }
+
         #floating-container {
             position: absolute;
             top: 0; left: 0; width: 100vw; height: 100vh;
@@ -50,79 +72,81 @@
             font-size: 2rem;
             animation: floatUp linear infinite;
             opacity: 0.7;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 4px 6px rgba(0, 150, 255, 0.2));
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(110vh) rotate(0deg) scale(0.8); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-10vh) rotate(360deg) scale(1.2); opacity: 0; }
+            0% { transform: translateY(110vh) rotate(0deg) scale(0.6); opacity: 0; }
+            10% { opacity: 0.9; }
+            90% { opacity: 0.9; }
+            100% { transform: translateY(-10vh) rotate(360deg) scale(1.3); opacity: 0; }
         }
 
-        /* Khung hiển thị chính */
+        /* Khung hiển thị ngọc bài (Sáng & Trong suốt) */
         .card {
-            background: rgba(255, 255, 255, 0.85); 
+            background: rgba(255, 255, 255, 0.65); 
             padding: 40px 30px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 0 5px rgba(255,255,255,0.4); 
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.6); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             text-align: center;
             max-width: 550px;
             width: 90%;
             position: relative;
             z-index: 10; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: cardBreathe 3s infinite alternate;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            animation: cardBreathe 4s infinite alternate;
         }
 
         @keyframes cardBreathe {
-            0% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 15px rgba(255, 154, 158, 0.5); }
-            100% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 40px rgba(161, 196, 253, 0.8); }
+            0% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 20px rgba(161, 196, 253, 0.4); }
+            100% { box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 0 45px rgba(224, 195, 252, 0.6); }
         }
 
         h1 { 
+            font-family: 'Playfair Display', serif;
             font-size: 2.2rem; 
             margin-bottom: 10px; 
-            font-weight: 800; 
+            font-weight: 700; 
             letter-spacing: 1px;
-            /* Chữ đổ bóng nhiều lớp */
-            text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+            color: #0369a1;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
         }
         
-        .rainbow-text {
-            /* Đã bỏ các dấu # bị sai hoặc đổi sang mã màu Hex chuẩn cho đẹp hơn */
-            background-image: linear-gradient(to left, #ff9a9e, #fecfef, #a29bfe, #6c5ce7, #00b894, #00cec9, #fd79a8);
+        .magic-text {
+            background-image: linear-gradient(to right, #d97706, #be123c, #0284c7, #7c3aed);
             -webkit-background-clip: text;
             color: transparent;
-            animation: rainbowAnim 4s linear infinite;
+            animation: magicAnim 5s linear infinite;
             background-size: 200% auto;
-        
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
-        @keyframes rainbowAnim {
+        @keyframes magicAnim {
             to { background-position: 200% center; }
         }
 
         p { 
-            font-size: 1.2rem; 
-            line-height: 1.5; 
-            color: #4a4a4a; 
-            font-weight: 600; 
+            font-size: 1.25rem; 
+            line-height: 1.6; 
+            color: #334155; 
+            font-weight: 600;
         }
 
         #question-text {
             font-size: 1.6rem;
-            font-weight: 800;
-            color: #d63031;
+            font-weight: 700;
+            color: #be123c;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
             margin-bottom: 25px;
-            animation: popIn 0.5s ease;
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% { transform: scale(0.8) translateY(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
         }
 
         .btn-container {
@@ -134,91 +158,102 @@
 
         button {
             padding: 16px;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #fff;
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             border: none;
-            border-radius: 15px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Baloo 2', cursive;
-            box-shadow: 0 6px 15px rgba(108, 92, 231, 0.3);
+            font-family: 'Philosopher', sans-serif;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
             position: relative;
             overflow: hidden;
         }
 
-        button::after {
+        button::before {
             content: '';
             position: absolute;
             top: 0; left: -100%;
             width: 50%; height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.4), rgba(255,255,255,0));
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255, 255, 255, 0.5), rgba(255,255,255,0));
             transform: skewX(-25deg);
-            transition: 0.5s;
+            transition: 0.6s;
         }
 
-        button:hover::after {
+        button:hover::before {
             left: 150%;
         }
 
         button:hover { 
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.5);
-            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
         }
         
-        button:active { transform: scale(0.95); }
+        button:active { transform: scale(0.97); }
 
         .start-btn { 
-            background: linear-gradient(135deg, #ff7675, #d63031); 
+            background: linear-gradient(135deg, #10b981, #059669); 
             font-size: 1.3rem;
-            box-shadow: 0 6px 15px rgba(214, 48, 49, 0.4);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
         .start-btn:hover {
-            background: linear-gradient(135deg, #d63031, #ff7675);
-            box-shadow: 0 10px 20px rgba(214, 48, 49, 0.6);
+            background: linear-gradient(135deg, #059669, #10b981);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.6);
         }
 
         .encouragement-text {
             margin-top: 20px;
             font-size: 1.1rem;
-            color: #0984e3; 
-            font-weight: 700;
-            animation: bounce 2s infinite;
+            color: #0369a1; 
+            font-style: italic;
+            animation: floatText 3s infinite ease-in-out;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         .hidden { display: none !important; }
 
-        .confetti {
+        .spiritual-energy {
             position: absolute;
             z-index: 100; 
-            animation: fall linear forwards;
+            border-radius: 50%;
+            box-shadow: 0 0 15px currentColor;
+            animation: fallEnergy linear forwards;
         }
-        @keyframes fall { 
-            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } 
+        @keyframes fallEnergy { 
+            0% { transform: translateY(-10vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(110vh) scale(1.5); opacity: 0; } 
+        }
+
+        .poem-text {
+            font-size: 1.35rem; 
+            line-height: 1.8; 
+            color: #0f172a; 
+            font-weight: 700; 
+            font-style: italic; 
+            margin-top: 20px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
 <body>
 
-    <!-- Vùng chứa icon động -->
+    <!-- Vùng chứa linh khí lơ lửng -->
     <div id="floating-container"></div>
 
     <div class="card" id="gameCard">
         <!-- Màn hình chào mừng -->
         <div id="welcome-screen">
-            <h1 style="color: #6c5ce7; font-size: 2.5rem;">HELLUUU MAI! 🎁</h1>
-            <p>Chào mừng đến với HIEPCHALLENGE, hãy chứng minh độ "hiểu chuyện" qua mấy câu hỏi sau đây nhé!</p>
+            <h1 style="color: #0284c7; font-size: 2.3rem;">CHÀO ĐẠO HỮU! ☁️</h1>
+            <p>Chào mừng đạo hữu đến với Bí Cảnh <b>HIEPCHALLENGE</b>. Hãy chứng minh đạo tâm kiên định qua mấy ải vấn tâm sau đây để nhận được cơ duyên nhé!</p>
             <div class="btn-container">
-                <button class="start-btn" onclick="startQuiz()">CHƠI LUÔN SỢ GÌ 🚀</button>
+                <button class="start-btn" onclick="startQuiz()">ĐỘ KIẾP LUÔN🚀</button>
             </div>
         </div>
 
@@ -226,86 +261,80 @@
         <div id="quiz-screen" class="hidden">
             <h1 id="question-text">Câu hỏi ở đây</h1>
             <div class="btn-container" id="options-container">
-                <!-- Nút tự động render -->
             </div>
-            <p class="encouragement-text" id="encouragement">Cố lên!</p>
+            <p class="encouragement-text" id="encouragement">Giữ vững tâm thần...</p>
         </div>
 
         <!-- Màn hình chuyển tiếp -->
         <div id="transition-screen" class="hidden">
-            <h1 class="rainbow-text" style="font-size: 2.8rem;">QUÁ ĐỈNH! 🎉</h1>
-            <p>Đúng là bạn tốt, trả lời không trượt phát nào! Mời bạn nhấn nút bên dưới để nhận phần thưởng.</p>
+            <h1 class="magic-text" style="font-size: 2.6rem;">ĐẠO TÂM KIÊN ĐỊNH! 🎉</h1>
+            <p>Đúng là bằng hữu chi giao, vượt ải không trượt phát nào! Mời đạo hữu nhấn nút bên dưới để nhận kỳ ngộ.</p>
             <div class="btn-container" style="margin-top: 30px;">
-                <button class="start-btn" onclick="showResult()" style="background: linear-gradient(135deg, #00b894, #55efc4); box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);">MỞ QUÀ NGAY 💌</button>
+                <button class="start-btn" onclick="showResult()" style="background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);">NHẬN KỲ NGỘ 📜</button>
             </div>
         </div>
 
-        <!-- Màn hình kết quả (Lời chúc) -->
+        <!-- Màn hình kết quả (Lời chúc Thơ) -->
         <div id="result-screen" class="hidden">
-            <h1 class="rainbow-text">HAPPY BIRTHDAY! 🎂</h1>
+            <h1 class="magic-text">CHÚC MỪNG PHI THĂNG! 🎂☁️</h1>
             
-            <p style="text-align: justify;">
-                Chúc XMai tuổi mới lúc nào cũng rạng rỡ, vui vẻ và tràn trề năng lượng nhé! Học hành nhẹ nhàng sương sương mà điểm vẫn cao chót vót.
-            </p>
+            <div class="poem-text">
+                Chúc Khánh tuổi mới rạng ngời,<br>
+                Tu vi đột phá, đất trời bao la.<br>
+                Tiêu diêu ngự kiếm xông pha,<br>
+                Linh thạch đầy túi, hào quang ngút ngàn.<br>
+                Rảnh rỗi bổng lộc phát ban,<br>
+                Mời Hiệp xơi lẩu, dạo đàn cà phê.<br>
+                Đạo tâm kiên định chẳng chê,<br>
+                Cả năm suôn sẻ, tràn trề tiên phong!
+            </div>
         
-            <p style="text-align: justify; margin-top: 15px;">
-                Mong mọi mục tiêu trong năm nay đều hoàn thành xuất sắc, có nhiều thời gian đi cà phê, đi ăn lẩu và đặc biệt đọc tus của t. 
-            </p>
-
-            <p style="text-align: justify; margin-top: 15px; font-weight: 700; color: #d63031;">
-                *Sau cùng thì: Put the daily grind on pause, let your hair down, and get ready to paint the town red!*
-            </p>
-        
-            <p style="margin-top:25px; text-align: right; color: #6c5ce7; font-size: 1.3rem; font-weight: 800;">
+            <p style="margin-top:25px; text-align: right; color: #0284c7; font-size: 1.4rem; font-family: 'Playfair Display', serif; font-weight: 800;">
                 ~ Hiệp ~
             </p>
         </div>
     </div>
 
     <script>
-        // Tạo các icon bay lơ lửng ngẫu nhiên làm nền
         function createFloatingIcons() {
             const container = document.getElementById('floating-container');
-            const icons = ['✨', '💖', '🎉', '🎁', '🎈', '🎮', '🍗', '🧋'];
+            const icons = ['☁️', '✨', '🌸', '☯️', '📜', '🔮', '🐉', '❄️'];
             
             setInterval(() => {
                 const icon = document.createElement('div');
                 icon.className = 'floating-icon';
                 icon.innerText = icons[Math.floor(Math.random() * icons.length)];
                 icon.style.left = Math.random() * 100 + 'vw';
-                icon.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                icon.style.animationDuration = (Math.random() * 10 + 8) + 's';
                 icon.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
                 container.appendChild(icon);
 
-                // Tự xóa sau khi bay hết màn hình
-                setTimeout(() => { icon.remove(); }, 10000);
-            }, 500);
+                setTimeout(() => { icon.remove(); }, 15000);
+            }, 600);
         }
 
-        // Khởi động nền động
         createFloatingIcons();
 
-        // Bộ câu hỏi đúng như bạn yêu cầu (Đã đổi tên thành Mai)
         const quizData = [
             {
-                question: "Hiệp trong mắt Mai là người như thế nào? 🤔",
-                options: ["Siêu cấp VIP PRO", "Yêu thương bạn bè", "Đáng tin cậy", "Tất cả đều đúng"],
-                encouragement: "Cứ chọn thật lòng nhé..."
+                question: "Hiệp trong mắt Khánh là vị cao nhân phương nào? 🤔",
+                options: ["Tuyệt thế cao thủ, pháp lực vô biên", "Hảo đệ huynh trọng tình trọng nghĩa", "Bậc hiền triết đáng tin cậy", "Tất cả đều đúng (Thiên Đạo chứng giám)"],
+                encouragement: "Dùng thần thức để cảm nhận đáp án..."
             },
             {
-                question: "Mỗi lần gặp Hiệp, suy nghĩ đầu tiên của Mai là gì?",
-                options: ["Cho Hiệp tiền", "Bao Hiệp ăn", "Tùy tâm trạng mà 1 trong 2", "Tất tay làm cả 2 cái trên"],
-                encouragement: "Cứ chọn thật lòng nhé..."
+                question: "Mỗi lần gặp Hiệp, suy nghĩ đầu tiên trong thức hải của Khánh là gì?",
+                options: ["Cống nạp linh thạch (Cho tiền)", "Mời xơi tiên đan, ngự thiện (Bao ăn)", "Tùy cơ duyên mà 1 trong 2", "Tất tay làm cả 2 (Đại gia tu chân)"],
+                encouragement: "Thành tâm tất ứng..."
             },
             {
-                question: "Món ăn nào mà hiện tại Mai muốn bao Hiệp nhất?",
-                options: ["Gà KFC", "Trà sữa", "Dookki/Lẩu", "Gì cũng muốn bao"],
-                encouragement: "Sắp đến rồi...!"
+                question: "Món tiên thực nào mà hiện tại Khánh muốn bao Hiệp nhất?",
+                options: ["Gà linh điểu (KFC)", "Tiên lộ ngọc dịch (Trà sữa)", "Linh hỏa lẩu (Dookki/Lẩu)", "Món gì cũng duyệt"],
+                encouragement: "Sắp vượt kiếp thành công rồi...!"
             },
             {
-                question: "Lời hứa quan trọng nhất tuổi mới của Mai là gì?",
-                options: ["Kiếm nhiều tiền", "Học chăm", "Bao Hiệp ăn KFC", "Học chăm, kiếm nhiều tiền để bao Hiệp ăn KFC mỗi ngày"],
-                encouragement: "Câu cuối cùng, cẩn thận!"
+                question: "Lời thề đại đạo quan trọng nhất tuổi mới của Khánh là gì?",
+                options: ["Thu thập nhiều linh thạch", "Bế quan tu luyện", "Bao Hiệp xơi gà linh điểu", "Tu vi đột phá, linh thạch dư dả để bao Hiệp mỗi ngày"],
+                encouragement: "Ải cuối cùng, cẩn thận tâm ma!"
             }
         ];
 
@@ -319,11 +348,12 @@
 
         function showQuestion() {
             const data = quizData[currentQuestion];
-            // Hiệu ứng giật (pop) nhẹ khi đổi câu hỏi
             const questionEl = document.getElementById('question-text');
             questionEl.innerText = data.question;
+            
             questionEl.style.animation = 'none';
-            setTimeout(() => questionEl.style.animation = 'popIn 0.5s ease', 10);
+            void questionEl.offsetWidth;
+            questionEl.style.animation = 'popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
 
             document.getElementById('encouragement').innerText = data.encouragement;
             
@@ -356,35 +386,30 @@
             document.getElementById('transition-screen').classList.add('hidden');
             document.getElementById('result-screen').classList.remove('hidden');
             
-            // Tăng hiệu ứng khung phát sáng
             document.getElementById('gameCard').style.animation = 'none';
-            document.getElementById('gameCard').style.boxShadow = "0 0 50px rgba(253, 121, 168, 1), 0 0 100px rgba(116, 185, 255, 0.8)";
+            document.getElementById('gameCard').style.boxShadow = "0 0 30px rgba(124, 58, 237, 0.4), 0 0 60px rgba(2, 132, 199, 0.4), inset 0 0 30px rgba(255,255,255,0.8)";
+            document.getElementById('gameCard').style.border = "2px solid rgba(139, 92, 246, 0.6)";
             
-            createExplosiveConfetti();
+            createSpiritualEnergyBurst();
         }
 
-        // Hiệu ứng pháo giấy nổ tung lồng lộn hơn
-        function createExplosiveConfetti() {
-            const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fd79a8'];
-            for (let i = 0; i < 150; i++) {
-                let conf = document.createElement('div');
-                conf.className = 'confetti';
-                conf.style.left = Math.random() * 100 + 'vw';
+        function createSpiritualEnergyBurst() {
+            const colors = ['#38bdf8', '#818cf8', '#34d399', '#fbbf24', '#f472b6', '#ffffff'];
+            for (let i = 0; i < 120; i++) {
+                let energy = document.createElement('div');
+                energy.className = 'spiritual-energy';
+                energy.style.left = Math.random() * 100 + 'vw';
                 
-                // Random hình vuông hoặc tròn
-                if (Math.random() > 0.5) {
-                    conf.style.width = (Math.random() * 10 + 5) + 'px';
-                    conf.style.height = conf.style.width;
-                    conf.style.borderRadius = '50%';
-                } else {
-                    conf.style.width = (Math.random() * 15 + 5) + 'px';
-                    conf.style.height = (Math.random() * 8 + 4) + 'px';
-                }
-
-                conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
-                conf.style.animationDelay = (Math.random() * 0.5) + 's';
-                document.body.appendChild(conf);
+                let size = Math.random() * 8 + 3;
+                energy.style.width = size + 'px';
+                energy.style.height = size + 'px';
+                
+                energy.style.color = colors[Math.floor(Math.random() * colors.length)];
+                energy.style.backgroundColor = energy.style.color;
+                
+                energy.style.animationDuration = (Math.random() * 2.5 + 1.5) + 's';
+                energy.style.animationDelay = (Math.random() * 0.3) + 's';
+                document.body.appendChild(energy);
             }
         }
     </script>
