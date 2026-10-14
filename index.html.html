@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///C:/Users/Lenovo/Downloads/tu_tien_birthday.html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1b27">
+<title>Đạo Hữu · Sinh Thần Đại Cát</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--night:#091722;--blue:#122a3a;--blue2:#1c3b4c;--mist:#b8cbd1;--gold:#c7b17a;--gold2:#e7d8ad;--paper:#e7e4d9;--ink:#263743;--muted:#a7bbc3;--line:#496574}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:#e4edf0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:var(--night);overflow-x:hidden}
+button,input,textarea{font:inherit}button{cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hero{min-height:95svh;position:relative;display:grid;place-items:center;text-align:center;padding:70px 20px 85px;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#07121b40,#0a1b2acc),url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2200&q=85') center 48%/cover}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 40%,#9ab8c22a,transparent 54%),linear-gradient(90deg,#07121bc9,#07121b2b 45%,#07121bc9)}
+.hero:after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:130px;background:linear-gradient(transparent,var(--night));z-index:-1}
+.side-mark{position:absolute;top:32px;writing-mode:vertical-rl;letter-spacing:.25em;font-family:'Playfair Display',serif;font-size:.85rem;color:#d4c7a0;opacity:.8}
+.side-mark.left{left:clamp(14px,4vw,55px)}.side-mark.right{right:clamp(14px,4vw,55px)}
+.hero-inner{max-width:800px}
+.kicker{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold2);font-size:.78rem;letter-spacing:.28em;text-transform:uppercase}
+.kicker:before,.kicker:after{content:"";width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.kicker:after{transform:rotate(180deg)}
+.moon{font-size:clamp(3rem,7vw,5rem);line-height:1.2;margin:16px 0 8px;filter:drop-shadow(0 0 22px #b6d4e5a0);animation:glow 4s ease-in-out infinite}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500}
+h1{font-size:clamp(2.5rem,7vw,5.5rem);line-height:1.08;letter-spacing:.01em;margin:12px 0 20px;color:#f0e9d8;text-shadow:0 4px 28px #02080c}
+.hero p{max-width:650px;margin:9px auto;color:#d1dce0;line-height:1.9}
+.hero .motto{font-family:'Playfair Display',serif;font-style:italic;color:#e2d6b5;font-size:1.1rem}
+.btn{border:1px solid var(--gold);border-radius:3px;padding:13px 22px;color:#f2e8c9;background:linear-gradient(135deg,#1e3c4d,#0c1b26);letter-spacing:.03em;transition:.25s;box-shadow:0 7px 28px #02080c65}
+.btn:hover{background:linear-gradient(135deg,#31596b,#172c39);transform:translateY(-2px);box-shadow:0 10px 34px #02080c99}
+.hero .btn{margin-top:28px;min-width:220px}
+main{width:min(1050px,calc(100% - 30px));margin:auto;padding:0 0 60px}
+.section{margin:28px 0;padding:clamp(22px,4vw,42px);border:1px solid #3d5968;background:linear-gradient(145deg,#102735f5,#0c1d29f5);box-shadow:0 20px 70px #020a1060;position:relative}
+.section:before,.section:after{content:"✧";position:absolute;color:var(--gold);font-size:1.25rem;top:12px;opacity:.8}.section:before{left:15px}.section:after{right:15px}
+.section-head{text-align:center;margin:0 auto 28px;max-width:700px}
+.symbol{color:var(--gold);font-size:1.7rem}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:8px 0 9px;color:#e8e2d2}
+.sub{color:var(--muted);line-height:1.75;font-size:.94rem}
+.paper{max-width:780px;margin:auto;color:var(--ink);background:linear-gradient(135deg,#eeece3,#d8dedc);padding:clamp(24px,5vw,48px);position:relative;box-shadow:0 12px 32px #0004;border:1px solid #c9c8b9;clip-path:polygon(1% 0,99% 0,100% 2%,99.6% 98%,98% 100%,2% 99.6%,0 98%,.4% 2%)}
+.paper:before{content:"天道有常 · 仙缘不尽";display:block;text-align:center;letter-spacing:.2em;color:#6c7d7f;font-size:.72rem;margin-bottom:20px}
+.paper h3{font-size:clamp(1.4rem,3.4vw,2.2rem);font-style:italic;color:#263d4a;margin:0 0 22px;text-align:center}
+.letter-text{white-space:pre-wrap;line-height:2;color:#334650;font-family:'Be Vietnam Pro',sans-serif;font-size:.97rem}
+.letter-sign{border-top:1px solid #aeb8b3;text-align:center;padding-top:17px;margin-top:24px;color:#8a7445;font-family:'Playfair Display',serif;letter-spacing:.06em}
+.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.field{display:flex;flex-direction:column;gap:7px;text-align:left}.field.full{grid-column:1/-1}
+label{font-size:.87rem;color:#d3dfe1}
+input[type=text],textarea{width:100%;background:#091923;border:1px solid #47606d;color:#e7eff0;border-radius:3px;padding:12px 13px}
+textarea{min-height:100px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#728b96}
+.field .btn{align-self:center}
+.upload-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px 0 24px}
+.file-label{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border:1px solid #607d8b;color:#d9e7e9;background:#122b3a;cursor:pointer;transition:.2s}
+.file-label:hover{border-color:var(--gold);color:var(--gold2)}
+.file-label input{display:none}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.photo-slot{min-height:190px;border:1px solid #456171;background:linear-gradient(145deg,#132e3d,#0a1b26);display:grid;place-items:center;overflow:hidden;position:relative}
+.photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.78)}
+.placeholder{text-align:center;padding:18px;color:#91aab4}.placeholder b{display:block;font-size:2rem;margin-bottom:8px;color:var(--gold)}
+.caption{position:absolute;bottom:0;left:0;right:0;padding:24px 10px 10px;background:linear-gradient(transparent,#06121de8);font-size:.8rem;color:#f0e9d8}
+.video-wrap{max-width:780px;margin:auto}
+video{width:100%;max-height:480px;background:#06111a;border:1px solid #456171}
+.video-placeholder{padding:42px 16px;text-align:center;border:1px dashed #456171;background:#0b1d29;color:#91aab4}
+.video-placeholder .play{font-size:2.8rem;color:var(--gold)}
+.treasure{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.treasure-card{padding:22px 12px;text-align:center;border:1px solid #425e6c;background:linear-gradient(180deg,#173343,#0b1b27);transition:.2s}
+.treasure-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.treasure-card .icon{font-size:2.2rem}.treasure-card h3{margin:9px 0 5px;color:#e5d8ad;font-size:1.1rem}.treasure-card p{font-size:.78rem;color:#9eb3bc;line-height:1.5;margin:0}
+.footer{text-align:center;padding:45px 12px 0;color:#9fb1b9;line-height:1.9}
+.footer .blessing{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:#e1d5b4}
+.hidden{display:none!important}
+#effects{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
+.spark{position:absolute;top:-18px;width:3px;height:13px;background:var(--gold);box-shadow:0 0 8px #e4d5a0;animation:fall linear forwards}
+.lotus{position:fixed;bottom:-40px;z-index:51;pointer-events:none;animation:rise 5s ease-in forwards;filter:drop-shadow(0 0 7px #abc8d7)}
+@keyframes fall{to{transform:translateY(110vh) rotate(640deg);opacity:.2}}
+@keyframes rise{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 14px #b6d4e560)}50%{filter:drop-shadow(0 0 28px #d5e9ffb5)}}
+@media(max-width:680px){.hero{min-height:90svh}.side-mark{font-size:.68rem}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-slot{min-height:140px}.edit-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.treasure{grid-template-columns:repeat(2,1fr)}.section{padding:26px 17px}.paper{padding:28px 22px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="effects" aria-hidden="true"></div>
+<header class="hero" id="top">
+  <div class="side-mark left">修仙之路 · 道心长存</div><div class="side-mark right">长生有望 · 仙途无量</div>
+  <div class="hero-inner">
+    <div class="kicker">Ngày độ kiếp · Sinh thần</div>
+    <div class="moon" aria-hidden="true">☯</div>
+    <h1>Đạo Hữu,<br>Đã Đến Ngày Sinh Nhật!</h1>
+    <p class="motto">Phàm nhân tu đạo, nghịch thiên tranh mệnh.</p>
+    <p>Thiên cơ luân chuyển, năm tháng lại thêm một vòng.<br>Hôm nay chính là ngày đạo hữu nghênh đón một lần đại cảnh giới đột phá!</p>
+    <button class="btn" id="openGift" disabled="">✧ Cơ duyên đã khai mở ✧</button>
+  </div>
+</header>
+
+<main id="memories" class="">
+  <section class="section">
+    <div class="section-head"><div class="symbol">卷</div><h2>Chiếu Thư Chúc Thọ</h2><p class="sub">Một phong thư gửi vị đạo hữu tương giao nhiều năm.</p></div>
+    <div class="paper">
+      <h3 id="letterHeading">Gửi Ngọc Hoa đạo hữu, vị đạo hữu tương giao</h3>
+      <div class="letter-text" id="letterText">Hôm nay thiên tượng dị biến, tử khí đông lai, linh khí hội tụ. Bần đạo chợt nhớ ra, hôm nay chính là ngày đạo hữu giáng thế, lại thêm một năm đạo hạnh.
+
+Trên con đường tu tiên, kẻ cầu trường sinh phải trải qua muôn vàn kiếp nạn, gặp bình cảnh, đấu cường địch, tranh đoạt cơ duyên. Mong đạo hữu từ nay tu vi tinh tiến, đạo tâm kiên định, phúc duyên thâm hậu.
+
+Chúc đạo hữu sớm ngày đột phá bình cảnh, gặp dữ hóa lành, nhặt bảo không hụt, luyện đan thành công, pháp bảo đầy kho, linh thạch vô số. Đi bí cảnh không gặp lão quái, ra ngoài lịch luyện chẳng đụng cường địch!
+
+Nguyện đạo hữu trên con đường trường sinh, dù trải qua vạn năm tuế nguyệt, vẫn có tri kỷ đồng hành, nâng chén luận đạo, cùng nhau tiêu dao giữa đất trời.
+
+Nguyện đạo hữu từ nay cơ duyên không dứt, đạo tâm trường tồn. Tiên lộ tuy xa, mong luôn có tri kỷ cùng bước. Sinh thần đại cát!
+
+Kính bút,
+Ngô Hiệp thượng nhân</div>
+      <div class="letter-sign">Sinh thần đại cát · Tiên đồ vĩnh xương</div>
+    </div>
+    <div class="edit-grid">
+      <div class="field"><label for="friendName">Đạo hiệu / tên người nhận</label><input id="friendName" type="text" placeholder="Ví dụ: Hàn Lập, đạo hữu..."></div>
+      <div class="field"><label for="fromName">Tên người gửi</label><input id="fromName" type="text" placeholder="Ký tên người gửi"></div>
+      <div class="field full"><label for="customMessage">Lời chúc riêng</label><textarea id="customMessage">Chúc đạo hữu tuổi mới tu vi tinh tiến, cơ duyên không dứt, ra ngoài gặp quý nhân, vào bí cảnh có thu hoạch. Mong đạo tâm vững như bàn thạch, linh thạch đầy túi, phiền não tiêu tan, ngày ngày tiêu dao! 🎉</textarea></div>
+      <div class="field full"><button class="btn" id="updateLetter">✧ Truyền niệm vào chiếu thư ✧</button></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div class="symbol">忆</div><h2>Kỷ Niệm Tu Luyện</h2><p class="sub">Những lần lịch luyện, những khoảnh khắc đáng nhớ — xin lưu vào truyền ảnh thạch, để năm tháng chẳng thể phai mờ.</p></div>
+    <div class="upload-row"><label class="file-label">◈ Chọn ảnh kỷ niệm <input id="photoInput" type="file" accept="image/*" multiple=""></label></div>
+    <div class="gallery" id="gallery"><div class="photo-slot"><img src="blob:null/53b5fe99-e407-4689-92c7-f86a1a35b4ac" alt="Truyền ảnh thạch 1"><div class="caption">Lần lịch luyện thứ 1 · Kỷ niệm bất phai</div></div></div>
+    <p class="sub" style="text-align:center;font-size:.82rem;margin-top:16px">Ảnh được hiển thị cục bộ trên thiết bị đang mở trang, không tự tải lên mạng.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div class="symbol">影</div><h2>Truyền Ảnh Thạch</h2><p class="sub">Lưu lại một đoạn thời gian đã cùng nhau đi qua.</p></div>
+    <div class="upload-row"><label class="file-label">▷ Nạp video kỷ niệm <input id="videoInput" type="file" accept="video/*"></label></div>
+    <div class="video-wrap" id="videoArea"><video src="blob:null/95edf8db-a031-4530-b9d5-9903b6905c06" controls="" playsinline="" aria-label="Video kỷ niệm"></video></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div class="symbol">宝</div><h2>Túi Trữ Vật Chúc Thọ</h2><p class="sub">Một chút cơ duyên gửi đến đạo hữu trong ngày sinh thần.</p></div>
+    <div class="treasure">
+      <div class="treasure-card"><div class="icon">💎</div><h3>Linh Thạch</h3><p>Thêm phúc duyên, tài vận hanh thông</p></div>
+      <div class="treasure-card"><div class="icon">🧪</div><h3>Đan Dược</h3><p>Tăng tu vi, vượt qua bình cảnh</p></div>
+      <div class="treasure-card"><div class="icon">🗡️</div><h3>Pháp Bảo</h3><p>Hộ thân trừ nạn, bách chiến bất nguy</p></div>
+      <div class="treasure-card"><div class="icon">🎁</div><h3>Quà Bí Mật</h3><p>Chờ đạo hữu tự mình khám phá</p></div>
+    </div>
+  </section>
+  <div class="footer">
+    <div class="blessing">Chúc đạo hữu sinh thần đại cát, tu vi tăng tiến,<br>trường sinh bất lão, tiên đồ vô lượng.</div>
+    <p>Nguyện con đường phía trước luôn có tri kỷ đồng hành.</p>
+    <button class="btn" id="sendWish">✧ Gửi lời chúc ✧</button>
+    <p style="font-size:.78rem"><a href="file:///C:/Users/Lenovo/Downloads/tu_tien_birthday.html#top" style="color:#c7b17a">Trở về đỉnh núi ↑</a></p>
+  </div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let photoUrls=[],videoUrl=null;
+function celebrate(){
+ const root=$('effects'),colors=['#c7b17a','#d6e3e8','#82a9bb','#8a9bb3','#e7d8ad'];
+ for(let i=0;i<100;i++){const s=document.createElement('span');s.className='spark';s.style.left=Math.random()*100+'%';s.style.background=colors[Math.floor(Math.random()*colors.length)];s.style.height=(7+Math.random()*14)+'px';s.style.animationDuration=(2.8+Math.random()*3.2)+'s';s.style.animationDelay=Math.random()*.6+'s';root.append(s);setTimeout(()=>s.remove(),6800)}
+ for(let i=0;i<16;i++)setTimeout(()=>{const l=document.createElement('span');l.className='lotus';l.textContent=['✧','❀','☄','✨'][Math.floor(Math.random()*4)];l.style.left=Math.random()*100+'%';l.style.fontSize=(18+Math.random()*22)+'px';l.style.color=colors[Math.floor(Math.random()*colors.length)];document.body.append(l);setTimeout(()=>l.remove(),5200)},i*110);
+}
+$('openGift').addEventListener('click',()=>{$('memories').classList.remove('hidden');$('openGift').textContent='✧ Cơ duyên đã khai mở ✧';$('openGift').disabled=true;$('memories').scrollIntoView({behavior:'smooth'});celebrate()});
+$('updateLetter').addEventListener('click',()=>{
+ const name=$('friendName').value.trim(),from=$('fromName').value.trim(),msg=$('customMessage').value.trim();
+ $('letterHeading').textContent=name?`Gửi ${name}, vị đạo hữu tương giao`:'Gửi vị đạo hữu tương giao nhiều năm';
+ $('letterText').textContent=(msg||'Chúc đạo hữu sinh thần đại cát!')+'\n\nNguyện đạo hữu từ nay cơ duyên không dứt, đạo tâm trường tồn. Tiên lộ tuy xa, mong luôn có tri kỷ cùng bước. Sinh thần đại cát!'+(from?'\n\nKính bút,\n'+from:'');
+ celebrate();
+});
+$('photoInput').addEventListener('change',e=>{
+ const files=Array.from(e.target.files||[]).filter(f=>f.type.startsWith('image/'));if(!files.length)return;
+ photoUrls.forEach(URL.revokeObjectURL);photoUrls=[];$('gallery').replaceChildren();
+ files.forEach((f,i)=>{const url=URL.createObjectURL(f);photoUrls.push(url);const slot=document.createElement('div');slot.className='photo-slot';const img=document.createElement('img');img.src=url;img.alt=`Truyền ảnh thạch ${i+1}`;const cap=document.createElement('div');cap.className='caption';cap.textContent=`Lần lịch luyện thứ ${i+1} · Kỷ niệm bất phai`;slot.append(img,cap);$('gallery').append(slot)});
+});
+$('videoInput').addEventListener('change',e=>{
+ const f=e.target.files&&e.target.files[0];if(!f)return;if(videoUrl)URL.revokeObjectURL(videoUrl);videoUrl=URL.createObjectURL(f);
+ const v=document.createElement('video');v.src=videoUrl;v.controls=true;v.playsInline=true;v.setAttribute('aria-label','Video kỷ niệm');$('videoArea').replaceChildren(v);
+});
+$('sendWish').addEventListener('click',()=>{celebrate();$('letterHeading').scrollIntoView({behavior:'smooth',block:'center'});});
+window.addEventListener('beforeunload',()=>{photoUrls.forEach(URL.revokeObjectURL);if(videoUrl)URL.revokeObjectURL(videoUrl)});
+</script>
+
+</body></html>
