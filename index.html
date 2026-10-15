@@ -89,7 +89,7 @@ video{width:100%;max-height:480px;background:#06111a;border:1px solid #456171}
     <h1>Đạo Hữu,<br>Đã Đến Ngày Sinh Nhật!</h1>
     <p class="motto">Phàm nhân tu đạo, nghịch thiên tranh mệnh.</p>
     <p>Thiên cơ luân chuyển, năm tháng lại thêm một vòng.<br>Hôm nay chính là ngày đạo hữu nghênh đón một lần đại cảnh giới đột phá!</p>
-    <button class="btn" id="openGift" disabled="">✧ Cơ duyên đã khai mở ✧</button>
+    <button class="btn" id="openGift">✧ Khai mở cơ duyên ✧</button>
   </div>
 </header>
 
@@ -112,25 +112,18 @@ Kính bút,
 Ngô Hiệp thượng nhân</div>
       <div class="letter-sign">Sinh thần đại cát · Tiên đồ vĩnh xương</div>
     </div>
-    <div class="edit-grid">
-      <div class="field"><label for="friendName">Đạo hiệu / tên người nhận</label><input id="friendName" type="text" placeholder="Ví dụ: Hàn Lập, đạo hữu..."></div>
-      <div class="field"><label for="fromName">Tên người gửi</label><input id="fromName" type="text" placeholder="Ký tên người gửi"></div>
-      <div class="field full"><label for="customMessage">Lời chúc riêng</label><textarea id="customMessage">Chúc đạo hữu tuổi mới tu vi tinh tiến, cơ duyên không dứt, ra ngoài gặp quý nhân, vào bí cảnh có thu hoạch. Mong đạo tâm vững như bàn thạch, linh thạch đầy túi, phiền não tiêu tan, ngày ngày tiêu dao! 🎉</textarea></div>
-      <div class="field full"><button class="btn" id="updateLetter">✧ Truyền niệm vào chiếu thư ✧</button></div>
-    </div>
+
   </section>
 
-  <section class="section">
-    <div class="section-head"><div class="symbol">忆</div><h2>Kỷ Niệm Tu Luyện</h2><p class="sub">Những lần lịch luyện, những khoảnh khắc đáng nhớ — xin lưu vào truyền ảnh thạch, để năm tháng chẳng thể phai mờ.</p></div>
-    <div class="upload-row"><label class="file-label">◈ Chọn ảnh kỷ niệm <input id="photoInput" type="file" accept="image/*" multiple=""></label></div>
-    <div class="gallery" id="gallery"><div class="photo-slot"><img src="blob:null/53b5fe99-e407-4689-92c7-f86a1a35b4ac" alt="Truyền ảnh thạch 1"><div class="caption">Lần lịch luyện thứ 1 · Kỷ niệm bất phai</div></div></div>
-    <p class="sub" style="text-align:center;font-size:.82rem;margin-top:16px">Ảnh được hiển thị cục bộ trên thiết bị đang mở trang, không tự tải lên mạng.</p>
-  </section>
 
   <section class="section">
     <div class="section-head"><div class="symbol">影</div><h2>Truyền Ảnh Thạch</h2><p class="sub">Lưu lại một đoạn thời gian đã cùng nhau đi qua.</p></div>
-    <div class="upload-row"><label class="file-label">▷ Nạp video kỷ niệm <input id="videoInput" type="file" accept="video/*"></label></div>
-    <div class="video-wrap" id="videoArea"><video src="blob:null/95edf8db-a031-4530-b9d5-9903b6905c06" controls="" playsinline="" aria-label="Video kỷ niệm"></video></div>
+    <div class="video-wrap">
+      <video controls playsinline preload="metadata" style="width:100%">
+        <source src="assets/video.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ phát video.
+      </video>
+    </div>
   </section>
 
   <section class="section">
@@ -146,35 +139,22 @@ Ngô Hiệp thượng nhân</div>
     <div class="blessing">Chúc đạo hữu sinh thần đại cát, tu vi tăng tiến,<br>trường sinh bất lão, tiên đồ vô lượng.</div>
     <p>Nguyện con đường phía trước luôn có tri kỷ đồng hành.</p>
     <button class="btn" id="sendWish">✧ Gửi lời chúc ✧</button>
-    <p style="font-size:.78rem"><a href="file:///C:/Users/Lenovo/Downloads/tu_tien_birthday.html#top" style="color:#c7b17a">Trở về đỉnh núi ↑</a></p>
+    <p style="font-size:.78rem"><a href="#top" style="color:#c7b17a">Trở về đỉnh núi ↑</a></p>
   </div>
 </main>
 <script>
 const $=id=>document.getElementById(id);
-let photoUrls=[],videoUrl=null;
+// Trang chỉ dành cho người nhận xem, không cần biến tải ảnh/video.
 function celebrate(){
  const root=$('effects'),colors=['#c7b17a','#d6e3e8','#82a9bb','#8a9bb3','#e7d8ad'];
  for(let i=0;i<100;i++){const s=document.createElement('span');s.className='spark';s.style.left=Math.random()*100+'%';s.style.background=colors[Math.floor(Math.random()*colors.length)];s.style.height=(7+Math.random()*14)+'px';s.style.animationDuration=(2.8+Math.random()*3.2)+'s';s.style.animationDelay=Math.random()*.6+'s';root.append(s);setTimeout(()=>s.remove(),6800)}
  for(let i=0;i<16;i++)setTimeout(()=>{const l=document.createElement('span');l.className='lotus';l.textContent=['✧','❀','☄','✨'][Math.floor(Math.random()*4)];l.style.left=Math.random()*100+'%';l.style.fontSize=(18+Math.random()*22)+'px';l.style.color=colors[Math.floor(Math.random()*colors.length)];document.body.append(l);setTimeout(()=>l.remove(),5200)},i*110);
 }
 $('openGift').addEventListener('click',()=>{$('memories').classList.remove('hidden');$('openGift').textContent='✧ Cơ duyên đã khai mở ✧';$('openGift').disabled=true;$('memories').scrollIntoView({behavior:'smooth'});celebrate()});
-$('updateLetter').addEventListener('click',()=>{
- const name=$('friendName').value.trim(),from=$('fromName').value.trim(),msg=$('customMessage').value.trim();
- $('letterHeading').textContent=name?`Gửi ${name}, vị đạo hữu tương giao`:'Gửi vị đạo hữu tương giao nhiều năm';
- $('letterText').textContent=(msg||'Chúc đạo hữu sinh thần đại cát!')+'\n\nNguyện đạo hữu từ nay cơ duyên không dứt, đạo tâm trường tồn. Tiên lộ tuy xa, mong luôn có tri kỷ cùng bước. Sinh thần đại cát!'+(from?'\n\nKính bút,\n'+from:'');
- celebrate();
-});
-$('photoInput').addEventListener('change',e=>{
- const files=Array.from(e.target.files||[]).filter(f=>f.type.startsWith('image/'));if(!files.length)return;
- photoUrls.forEach(URL.revokeObjectURL);photoUrls=[];$('gallery').replaceChildren();
- files.forEach((f,i)=>{const url=URL.createObjectURL(f);photoUrls.push(url);const slot=document.createElement('div');slot.className='photo-slot';const img=document.createElement('img');img.src=url;img.alt=`Truyền ảnh thạch ${i+1}`;const cap=document.createElement('div');cap.className='caption';cap.textContent=`Lần lịch luyện thứ ${i+1} · Kỷ niệm bất phai`;slot.append(img,cap);$('gallery').append(slot)});
-});
-$('videoInput').addEventListener('change',e=>{
- const f=e.target.files&&e.target.files[0];if(!f)return;if(videoUrl)URL.revokeObjectURL(videoUrl);videoUrl=URL.createObjectURL(f);
- const v=document.createElement('video');v.src=videoUrl;v.controls=true;v.playsInline=true;v.setAttribute('aria-label','Video kỷ niệm');$('videoArea').replaceChildren(v);
-});
+
+
 $('sendWish').addEventListener('click',()=>{celebrate();$('letterHeading').scrollIntoView({behavior:'smooth',block:'center'});});
-window.addEventListener('beforeunload',()=>{photoUrls.forEach(URL.revokeObjectURL);if(videoUrl)URL.revokeObjectURL(videoUrl)});
+
 </script>
 
 </body></html>
