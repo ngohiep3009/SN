@@ -128,6 +128,20 @@ Ngô Hiệp thượng nhân</div>
 
   <section class="section">
     <div class="section-head"><div class="symbol">宝</div><h2>Túi Trữ Vật Chúc Thọ</h2><p class="sub">Một chút cơ duyên gửi đến đạo hữu trong ngày sinh thần.</p></div>
+
+<section class="section hidden" id="secretVideoSection">
+  <div class="section-head">
+    <div class="symbol">🎁</div>
+    <h2>Bí Mật Trong Túi Trữ Vật</h2>
+    <p class="sub">Cơ duyên đã mở, mời đạo hữu thưởng thức.</p>
+  </div>
+  <div class="video-wrap">
+    <video id="secretVideo" controls playsinline preload="metadata">
+      <source src="assets/secret.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ phát video.
+    </video>
+  </div>
+</section>
     <div class="treasure">
       <div class="treasure-card"><div class="icon">💎</div><h3>Linh Thạch</h3><p>Thêm phúc duyên, tài vận hanh thông</p></div>
       <div class="treasure-card"><div class="icon">🧪</div><h3>Đan Dược</h3><p>Tăng tu vi, vượt qua bình cảnh</p></div>
@@ -155,6 +169,32 @@ $('openGift').addEventListener('click',()=>{$('memories').classList.remove('hidd
 
 $('sendWish').addEventListener('click',()=>{celebrate();$('letterHeading').scrollIntoView({behavior:'smooth',block:'center'});});
 
+  const secretGift = document.querySelectorAll('.treasure-card')[3];
+
+secretGift.style.cursor = 'pointer';
+secretGift.setAttribute('role', 'button');
+secretGift.setAttribute('tabindex', '0');
+
+function openSecretGift() {
+  const section = $('secretVideoSection');
+  const video = $('secretVideo');
+
+  section.classList.remove('hidden');
+  section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  video.play().catch(() => {
+    // Nếu không tự phát được, người xem nhấn Play.
+  });
+}
+
+secretGift.addEventListener('click', openSecretGift);
+
+secretGift.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    openSecretGift();
+  }
+});
 </script>
 
 </body></html>
